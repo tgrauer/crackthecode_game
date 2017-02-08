@@ -38,6 +38,10 @@
                 <button class="btn btn-lg btn-primary" onclick="window.location.reload()">Play again?</button>
             </div>
 
+            <div id="nextlevel-div" class="row" style="display:none">
+                <button class="btn btn-lg btn-primary" onclick="nextlevel()">Play Next Level</button>
+            </div>
+
             <div class="row" id="results">
                 <div class="col-sm-12 heading alert alert-info">
                     <strong class="col-xs-6">Guess</strong>
@@ -46,22 +50,27 @@
             </div>
         </div>
 
-        <div class="col-sm-6 col-sm-offset-1 instructions panel panel-default">
-            <div class="panel-body">
-                <h2>Objective:</h2>
-                <p class="lead">Guess the randomly generate 4 digit code.</p>
+        <div class="col-sm-6 col-sm-offset-1 instructions">
+            <div class="points">
+                <h4 id="points">Points: <span>0</span> | Level<span class=level> 1</span></h4>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2>Objective:</h2>
+                    <p class="lead">Guess the randomly generate 4 digit code.</p>
 
-                <h2>Rules:</h2>
-                <ul>
-                    <li>Each guess must consist of 4 numeric characters.</li>
-                    <li>Numbers may be used more than once!</li>
-                    <li>You win only if your guess is an exact match.</li>
-                    <li>You lose if you fail to guess the code under 10 guesses.</li>
-                    <li><span class="glyphicon glyphicon-ok"></span> Indicates a number is in the correct place.</li>
-                    <li><span class="glyphicon glyphicon-transfer"></span> Indicates a number is part of the code, but not in the right position.</li>
-                    <li><span class="glyphicon glyphicon-transfer"></span> <b>Doesn't consider</b> how many times a number exists in the code.</li>
-                    <li><span class="glyphicon glyphicon-remove"></span> Indicates a number is not part of the code.</li>
-                </ul>
+                    <h2>Rules:</h2>
+                    <ul>
+                        <li>Each guess must consist of 4 numeric characters.</li>
+                        <li>Numbers may be used more than once!</li>
+                        <li>You win only if your guess is an exact match.</li>
+                        <li>You lose if you fail to guess the code under 10 guesses.</li>
+                        <li><span class="glyphicon glyphicon-ok"></span> Indicates a number is in the correct place.</li>
+                        <li><span class="glyphicon glyphicon-transfer"></span> Indicates a number is part of the code, but not in the right position.</li>
+                        <li><span class="glyphicon glyphicon-transfer"></span> <b>Doesn't consider</b> how many times a number exists in the code.</li>
+                        <li><span class="glyphicon glyphicon-remove"></span> Indicates a number is not part of the code.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
