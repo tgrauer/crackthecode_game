@@ -1,0 +1,98 @@
+body{
+	padding-top: 30px;
+}
+
+ul{
+	line-height: 1.8em;
+	padding-left: 20px;
+}
+
+.h2, h2 {
+    font-size: 25px;
+    border-bottom: 1px solid #ccc;
+    background: #337ab7;
+    color: #fff;
+    padding: 3px 5px;
+}
+.code {
+  font-size: 50px;
+	text-align: center;
+}
+
+.failure {
+  color: #d9534f;
+}
+
+.success {
+  color: #5cb85c;
+}
+
+.form-inline {
+  margin-bottom: 10px;
+}
+
+.message {
+  font-weight: bold;
+}
+
+.well{
+	margin-top: 30px;
+	padding: 10px 40px 20px 40px;
+}
+
+.well h1{
+	text-align: center;
+}
+
+.alert{
+	margin-top: 10px;
+	padding: 3px 5px;
+	text-align: center;
+}
+
+.alert.alert-success{
+	font-size: 20px;
+}
+
+input.form-control{
+	height: 45px;
+	text-align: center;
+}
+
+.btn{
+	margin: 0 auto;
+	margin-top: 25px;
+	margin-bottom: 20px;
+	display: block;
+}
+
+button.btn{
+	margin-top: 5px;
+}
+
+div#results {
+    font-size: 16px;
+}
+
+div#results .heading{
+	padding: 3px 5px;
+	margin-bottom: 5px;
+	overflow: auto;
+}
+
+p.num_attempts{
+	text-align: center;
+	font-weight: 800;
+}
+
+.guessrow{
+	text-align: center;
+}
+
+.instructions{
+	margin-top: 20px;
+}
+
+.instructions p{
+	font-size: 18px;
+}
