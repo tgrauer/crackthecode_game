@@ -1,9 +1,14 @@
 let answer = document.getElementById('answer').value;
 let attempt = document.getElementById('attempt').value;
 let results = document.getElementById('results');
+let max_attempts=10;
 let attempts_left=10;
 let code = document.getElementById('code').getElementsByTagName('strong')[0];
 let input = document.getElementById('user-guess');
+let points=0;
+let level = 1;
+let pointsHolder=document.getElementById('points').getElementsByTagName('span')[0];
+let levelHolder=document.getElementById('points').getElementsByTagName('span')[1];
 
 if(answer=='' || attempt==''){
 	 setHiddenFields();
@@ -17,6 +22,8 @@ function setHiddenFields(){
 		answer='0'+answer;
 	}
 	document.getElementById('answer').value=answer;
+	document.getElementById('user-guess').focus();
+	attempts_left=max_attempts;
 }
 
 function guess() {
@@ -31,8 +38,9 @@ function guess() {
 		document.getElementById('message').innerHTML='YOU WIN !!!!';
 		document.getElementById('message').className='message alert alert-success';
 		showAnswer(true);
-	}else if(attempt>=10){
-		document.getElementById('message').innerHTML='YOU LOSE !!!!';
+	}else if(attempt>=max_attempts){
+		document.getElementById('message').innerHTML='GAME OVER !!!!';
+		document.getElementById('message').className='message alert alert-danger';
 		showAnswer(getResults(input.value));
 	}else{
 		attempts_left--;
@@ -45,6 +53,7 @@ function guess() {
 
 	document.getElementById('user-guess').value='';
 	document.getElementById('user-guess').focus();
+	document.getElementById('message').style.display='block';
 }
 
 function validateInput(guess){
@@ -55,7 +64,7 @@ function validateInput(guess){
 		document.getElementById('user-guess').focus();
 		document.getElementById('message').className +=' alert';
 		document.getElementById('message').className +=' alert-danger';
-		document.getElementById('message').innerHTML="Guesses must be exactly 4 characters long.";
+		document.getElementById('message').innerHTML="Guess must be exactly 4 characters long.";
 		return false;
 	}
 }
@@ -87,14 +96,40 @@ function getResults(input){
 }
 
 function showAnswer(gameover){
+	points=attempts_left*100 +points;
+	pointsHolder.innerHTML=points;
 
 	if(gameover){
 		code.className+=' success';
+		document.getElementById('nextlevel-div').style.display='block';
 	}else{
 		code.className+=' failure';
+		document.getElementById('replay-div').style.display='block';
 	}
 
 	code.innerHTML=answer;
-	document.getElementById('replay-div').style.display='block';
 	document.getElementById('guessing-div').style.display='none';
+}
+
+function nextlevel(){
+	code.innerHTML="????";
+	code.classList.remove("success");
+
+	document.getElementById('message').innerHTML="";
+	document.getElementById('message').classList.remove("alert");
+	document.getElementById('message').classList.remove("alert-success");
+	document.getElementById('message').style.display='none';
+	document.getElementById('nextlevel-div').style.display='none';
+	document.getElementById('guessing-div').style.display='block';
+	level++;
+	levelHolder.innerHTML=' '+level;
+	max_attempts--;
+
+	var guessedRows = document.getElementsByClassName('guessrow');
+	while (guessedRows[0]) {
+	    guessedRows[0].parentNode.removeChild(guessedRows[0]);
+	}
+
+	setHiddenFields();
+
 }
