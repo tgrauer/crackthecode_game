@@ -30,8 +30,8 @@
                     </p>
                 </div>
 
-                <div id="guessing-div" class="row">
-                    <form action="#" onsubmit="return guess()">
+                <div id="guessing-div" class="row" onlick="guess()">
+                    <form action="#" id="game">
                         <input type="hidden" id="attempt"/>
                         <input type="hidden" id="answer"/>
                         <div class="form-group">
@@ -86,6 +86,7 @@
             </div>
         </div>
     </div>
+    
     <script src="assets/main.js"></script>
     </body>
     </html>

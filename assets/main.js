@@ -1,17 +1,17 @@
-let answer = document.getElementById('answer').value;
-let attempt = document.getElementById('attempt').value;
-let results = document.getElementById('results');
-let attempts_left=10;
-let code = document.getElementById('code').getElementsByTagName('strong')[0];
-let revealCode;
-let input = document.getElementById('user-guess');
-let points=0;
-let level = 1;
-let pointsHolder=document.getElementById('points').getElementsByTagName('span')[0];
-let levelHolder=document.getElementById('level').getElementsByTagName('span')[0];
-let codelength=3;
-let multiplier=100;
-let notincode=[];
+var answer = document.getElementById('answer').value;
+var attempt = document.getElementById('attempt').value;
+var results = document.getElementById('results');
+var attempts_left=10;
+var code = document.getElementById('code').getElementsByTagName('strong')[0];
+var revealCode;
+var input = document.getElementById('user-guess');
+var points=0;
+var level = 1;
+var pointsHolder=document.getElementById('points').getElementsByTagName('span')[0];
+var levelHolder=document.getElementById('level').getElementsByTagName('span')[0];
+var codelength=3;
+var multiplier=100;
+var notincode=[];
 
 if(answer=='' || attempt==''){
 	 setHiddenFields();
@@ -34,10 +34,14 @@ function setHiddenFields(){
 	}
 	document.getElementById('answer').value=answer;
 	document.getElementById('user-guess').focus();
-	console.log(answer);
+	// console.log(answer);
 }
 
+document.getElementById("game").addEventListener('submit', guess);
+
 function guess() {
+	document.getElementById('user-guess').blur();
+	// $("input").blur();
 
 	if(!validateInput(input.value)){
 		return false;
