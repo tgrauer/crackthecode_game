@@ -3,6 +3,7 @@ applet, object, iframe, body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abb
 
 body{
 	font-family: Arial, sans-serif;
+	background: #f9f9f9;
 }
 
 h1,h2,h3,h4,.btn,input.btn{
@@ -47,6 +48,7 @@ ul{
 .well{
 	margin-top: 30px;
 	padding: 10px 30px;
+	border: 1px solid #d8d8d8
 }
 
 .well h1{
