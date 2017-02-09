@@ -39,9 +39,8 @@ function setHiddenFields(){
 
 document.getElementById("game").addEventListener('submit', guess);
 
-function guess() {
-	document.getElementById('user-guess').blur();
-	// $("input").blur();
+function guess(e) {
+	e.preventDefault();
 
 	if(!validateInput(input.value)){
 		return false;
