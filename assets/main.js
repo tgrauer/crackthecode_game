@@ -1,6 +1,7 @@
 var answer = document.getElementById('answer').value;
 var attempt = document.getElementById('attempt').value;
-var results = document.getElementById('results');
+var guess_row = document.getElementById('results').getElementsByClassName('guess')[0];
+var results = document.getElementById('results').getElementsByClassName('results')[0];
 var attempts_left=10;
 var code = document.getElementById('code').getElementsByTagName('strong')[0];
 var revealCode;
@@ -34,13 +35,11 @@ function setHiddenFields(){
 	}
 	document.getElementById('answer').value=answer;
 	document.getElementById('user-guess').focus();
-	// console.log(answer);
+	console.log(answer);
 }
 
-document.getElementById("game").addEventListener('submit', guess);
 
-function guess(e) {
-	e.preventDefault();
+function guess() {
 
 	if(!validateInput(input.value)){
 		return false;
@@ -89,26 +88,28 @@ function validateInput(guess){
 
 function getResults(input){
 	var correct=0;
-	var html = '<div class="row guessrow"><div class="col-xs-12 col-sm-6"><b>' + input + '</b></div><div class="col-xs-12 col-sm-6">';
+	var guess_html = '<div class="col-xs-12 guessrow"><b>' + input + '</b></div>';
+	var results_html= '<div class="col-xs-12 guessrow">';
 
 	for(var i=0;i<input.length;i++){
 		if(input.charAt(i)==answer.charAt(i)){
-			html += '<span><i class="fa fa-check" aria-hidden="true"></i></span>';
+			results_html += '<span><i class="fa fa-check" aria-hidden="true"></i></span>';
 			correct++;
 		}else if(answer.indexOf(input.charAt(i)) > -1){
-			html += '<span><i class="fa fa-exchange" aria-hidden="true"></i></span>';
+			results_html += '<span><i class="fa fa-exchange" aria-hidden="true"></i></span>';
 		}else{
 
 			if(notincode.indexOf(input.charAt(i)) === -1) {
 				notincode.push(input.charAt(i));
 			}
 			
-			html += '<span><i class="fa fa-times" aria-hidden="true"></i></span>';
+			results_html += '<span><i class="fa fa-times" aria-hidden="true"></i></span>';
 		}
 	}
 
-	html += '</div></div>';
-	results.innerHTML += html;
+	results_html += '</div>';
+	guess_row.innerHTML += guess_html;
+	results.innerHTML += results_html;
 	notincode.sort();
 	document.getElementsByClassName('notincode')[0].innerHTML=notincode;
 	document.getElementsByClassName('notincode')[0].style.display='block';
@@ -135,6 +136,7 @@ function levelOver(gameover){
 
 	code.innerHTML=answer;
 	document.getElementById('guessing-div').style.display='none';
+
 }
 
 function nextlevel(){

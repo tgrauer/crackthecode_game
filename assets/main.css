@@ -46,12 +46,14 @@ ul{
 
 .well{
 	margin-top: 30px;
-	padding: 10px 40px 20px 40px;
+	padding: 10px 30px;
 }
 
 .well h1{
 	text-align: center;
 	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: 800;
 }
 
 .alert{
@@ -91,10 +93,13 @@ div#results .heading{
 	padding: 3px 5px;
 	margin-bottom: 5px;
 	overflow: auto;
+	display: inline-block;
+	width: 100%;
 }
 
-p.lead{
-	margin-bottom: 30px;
+.guess,.results{
+	padding: 0;
+	text-align: center;
 }
 
 p.num_attempts{
@@ -106,10 +111,15 @@ p.num_attempts{
 	text-align: center;
 	letter-spacing: 0.2em;
 	font-size: 17px;
+	padding: 0;
 }
 
 .instructions{
 	margin-top: 20px;
+}
+
+.instructions p{
+	margin-bottom: 30px;
 }
 
 .points{
@@ -177,6 +187,7 @@ p.charsleft{
 }
 
 @media handheld, only screen and (max-width: 498px) {
+	
 	.well h1{
 		font-size: 31px;
 	}
