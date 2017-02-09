@@ -52,6 +52,7 @@ ul{
 
 .alert.alert-success{
 	font-size: 20px;
+	margin-bottom: 10px;
 }
 
 input.form-control{
@@ -88,6 +89,7 @@ p.num_attempts{
 
 .guessrow{
 	text-align: center;
+	letter-spacing: 0.2em;
 }
 
 .instructions{
@@ -101,8 +103,12 @@ p.num_attempts{
 .points{
 	background: #a94442;
 	color: #fff;
-	padding: 3px 5px;
+	padding: 3px 10px;
 }
 
+.points_earned{
+	font-size: 25px;
+	font-weight: 700;
+}
 
 

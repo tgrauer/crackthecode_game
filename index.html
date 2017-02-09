@@ -11,10 +11,10 @@
   <body>
     <div class="container">
         <div class="col-sm-5 well">
-            <h1>Code Breaker</h1>
+            <h1>Crack the Code</h1>
             <div class="row">
                 <p id="code" class="code">
-                <strong>????</strong>
+                <strong>???</strong>
                 </p>
             </div>
 
@@ -23,7 +23,7 @@
                     <input type="hidden" id="attempt"/>
                     <input type="hidden" id="answer"/>
                     <div class="form-group">
-                      <input id="user-guess" class="form-control" type="text" maxlength="4" />
+                      <input id="user-guess" class="form-control" type="text" />
                     </div>
                     <input type="submit" class="btn btn-lg btn-primary" value="Guess Answer">
                     <!-- <p class="num_attempts"></p> -->
@@ -39,6 +39,7 @@
             </div>
 
             <div id="nextlevel-div" class="row" style="display:none">
+                <p class="alert alert-danger points_earned"></p>
                 <button class="btn btn-lg btn-primary" onclick="nextlevel()">Play Next Level</button>
             </div>
 
