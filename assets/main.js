@@ -5,7 +5,6 @@ let attempts_left=10;
 let code = document.getElementById('code').getElementsByTagName('strong')[0];
 let revealCode;
 let input = document.getElementById('user-guess');
-let progress='';
 let points=0;
 let level = 1;
 let pointsHolder=document.getElementById('points').getElementsByTagName('span')[0];
@@ -38,8 +37,6 @@ function setHiddenFields(){
 }
 
 function guess() {
-
-	// code.innerHTML="";
 
 	if(!validateInput(input.value)){
 		return false;
@@ -153,5 +150,22 @@ function nextlevel(){
 	}
 
 	setHiddenFields();
+}
 
+function charslefttoenter(){
+	
+	var charsleft=codelength-input.value.length;
+	document.getElementsByClassName('charsleft')[0].innerHTML=charsleft+ ' more character(s)';
+	console.log(charsleft);
+
+	if(charsleft==0){
+		document.getElementsByClassName('charsleft')[0].style.display='none';
+	}else if(charsleft < 0){
+		charsleft=Math.abs(charsleft);
+		document.getElementsByClassName('charsleft')[0].style.display='block';
+		document.getElementsByClassName('charsleft')[0].innerHTML='Remove '+charsleft+ ' character(s)';
+	}
+	else{
+		document.getElementsByClassName('charsleft')[0].style.display='block';
+	}
 }

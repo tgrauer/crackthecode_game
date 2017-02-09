@@ -19,12 +19,13 @@
             </div>
 
             <div id="guessing-div" class="row">
-                <form action="#" onsubmit="return guess()" auto-complete="off">
+                <form action="#" onsubmit="return guess()">
                     <input type="hidden" id="attempt"/>
                     <input type="hidden" id="answer"/>
                     <div class="form-group">
-                      <input id="user-guess" class="form-control" type="text" />
+                      <input id="user-guess" class="form-control" type="text" autocomplete="off"  onkeyup="charslefttoenter()"/>
                     </div>
+                    <p class="charsleft"></p>
                     <input type="submit" class="btn btn-lg btn-primary" value="Guess Answer">
                     <!-- <p class="num_attempts"></p> -->
                 </form>
