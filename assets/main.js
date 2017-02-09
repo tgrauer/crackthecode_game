@@ -89,21 +89,21 @@ function validateInput(guess){
 
 function getResults(input){
 	var correct=0;
-	var html = '<div class="row guessrow"><div class="col-xs-6"><b>' + input + '</b></div><div class="col-xs-6">';
+	var html = '<div class="row guessrow"><div class="col-xs-12 col-sm-6"><b>' + input + '</b></div><div class="col-xs-12 col-sm-6">';
 
 	for(var i=0;i<input.length;i++){
 		if(input.charAt(i)==answer.charAt(i)){
-			html += '<span class="glyphicon glyphicon-ok"></span>';
+			html += '<span><i class="fa fa-check" aria-hidden="true"></i></span>';
 			correct++;
 		}else if(answer.indexOf(input.charAt(i)) > -1){
-			html += '<span class="glyphicon glyphicon-transfer"></span>';
+			html += '<span><i class="fa fa-exchange" aria-hidden="true"></i></span>';
 		}else{
 
 			if(notincode.indexOf(input.charAt(i)) === -1) {
 				notincode.push(input.charAt(i));
 			}
 			
-			html += '<span class="glyphicon glyphicon-remove"></span>';
+			html += '<span><i class="fa fa-times" aria-hidden="true"></i></span>';
 		}
 	}
 

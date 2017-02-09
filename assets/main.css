@@ -2,7 +2,12 @@
 applet, object, iframe, body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, caption, img, header, section { margin: 0; padding: 0; outline: none; border: none; }
 
 body{
+	font-family: Arial, sans-serif;
+}
+
+h1,h2,h3,h4,.btn,input.btn{
 	font-family: Ubuntu, sans-serif;
+
 }
 
 ul{
@@ -88,6 +93,10 @@ div#results .heading{
 	overflow: auto;
 }
 
+p.lead{
+	margin-bottom: 30px;
+}
+
 p.num_attempts{
 	text-align: center;
 	font-weight: 800;
@@ -101,10 +110,6 @@ p.num_attempts{
 
 .instructions{
 	margin-top: 20px;
-}
-
-.instructions p{
-	font-size: 18px;
 }
 
 .points{
@@ -142,3 +147,39 @@ p.charsleft{
 .game{
 	margin-bottom: 40px;
 }
+
+.fa-check{
+	color: #3c763d;
+}
+.fa-exchange{
+	color: #31708f;
+}
+
+.fa-times{
+	color: #a94442;
+}
+
+@media handheld, only screen and (max-width: 768px) {
+	.well{
+		margin-top: 0;
+	}
+	.points{
+		margin-bottom: 0;
+	}
+	.game, .instructions{
+		padding: 0;
+	}
+
+	.gamecnt{
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media handheld, only screen and (max-width: 498px) {
+	.well h1{
+		font-size: 31px;
+	}
+}	
+
+
