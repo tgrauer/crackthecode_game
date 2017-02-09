@@ -112,7 +112,7 @@ function getResults(input){
 }
 
 function levelOver(gameover){
-	var points_earned=attempts_left*100 +points*level;
+	var points_earned=attempts_left*100 *level;
 	points=points+points_earned;
 	pointsHolder.innerHTML=points;
 
