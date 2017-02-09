@@ -36,7 +36,7 @@
                         <input type="hidden" id="attempt"/>
                         <input type="hidden" id="answer"/>
                         <div class="form-group">
-                          <input id="user-guess" class="form-control" type="tel" autocomplete="off" onkeyup="charslefttoenter()" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+                          <input id="user-guess" class="form-control" type="tel" autocomplete="off" onkeyup="charslefttoenter()" onkeypress='return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 13'/>
                         </div>
                         <p class="charsleft"></p>
                         <input type="submit" class="btn btn-lg btn-primary" value="Guess Answer">
