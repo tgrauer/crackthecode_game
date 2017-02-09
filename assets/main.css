@@ -3,7 +3,6 @@ applet, object, iframe, body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abb
 
 body{
 	font-family: Ubuntu, sans-serif;
-	padding-top: 30px;
 }
 
 ul{
@@ -111,6 +110,7 @@ p.num_attempts{
 	background: #a94442;
 	color: #fff;
 	padding: 10px;
+	margin-bottom: 20px;
 }
 
 .points h4{
@@ -136,4 +136,8 @@ p.charsleft{
 .notincode{
 	display: none;
 	font-weight: 800;
+}
+
+.game{
+	margin-bottom: 40px;
 }
