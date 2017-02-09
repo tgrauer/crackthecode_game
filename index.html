@@ -10,51 +10,53 @@
   </head>
   <body>
     <div class="container">
-        <div class="col-sm-5 well">
-            <h1>Crack the Code</h1>
-            <div class="row">
-                <p id="code" class="code">
-                <strong>???</strong>
-                </p>
-            </div>
+        <div class="col-sm-5">
+            <div class="well">
+                <h1>Crack the Code</h1>
+                <div class="row">
+                    <p id="code" class="code">
+                    <strong>???</strong>
+                    </p>
+                </div>
 
-            <div id="guessing-div" class="row">
-                <form action="#" onsubmit="return guess()">
-                    <input type="hidden" id="attempt"/>
-                    <input type="hidden" id="answer"/>
-                    <div class="form-group">
-                      <input id="user-guess" class="form-control" type="text" autocomplete="off"  onkeyup="charslefttoenter()"/>
+                <div id="guessing-div" class="row">
+                    <form action="#" onsubmit="return guess()">
+                        <input type="hidden" id="attempt"/>
+                        <input type="hidden" id="answer"/>
+                        <div class="form-group">
+                          <input id="user-guess" class="form-control" type="text" autocomplete="off"  onkeyup="charslefttoenter()"/>
+                        </div>
+                        <p class="charsleft"></p>
+                        <input type="submit" class="btn btn-lg btn-primary" value="Guess Answer">
+                    </form>
+                </div>
+
+                <div class="row">
+                    <p id="message" class="message"></p>
+                </div>
+
+                <div id="replay-div" class="row" style="display:none">
+                    <button class="btn btn-lg btn-primary" onclick="window.location.reload()">Play again?</button>
+                </div>
+
+                <div id="nextlevel-div" class="row" style="display:none">
+                    <p class="alert alert-danger points_earned"></p>
+                    <button class="btn btn-lg btn-primary" onclick="nextlevel()">Play Next Level</button>
+                </div>
+
+                <div class="row" id="results">
+                    <div class="col-sm-12 heading alert alert-info">
+                        <strong class="col-xs-6">Guess</strong>
+                        <strong class="col-xs-6">Result</strong>
                     </div>
-                    <p class="charsleft"></p>
-                    <input type="submit" class="btn btn-lg btn-primary" value="Guess Answer">
-                    <!-- <p class="num_attempts"></p> -->
-                </form>
-            </div>
-
-            <div class="row">
-                <p id="message" class="message"></p>
-            </div>
-
-            <div id="replay-div" class="row" style="display:none">
-                <button class="btn btn-lg btn-primary" onclick="window.location.reload()">Play again?</button>
-            </div>
-
-            <div id="nextlevel-div" class="row" style="display:none">
-                <p class="alert alert-danger points_earned"></p>
-                <button class="btn btn-lg btn-primary" onclick="nextlevel()">Play Next Level</button>
-            </div>
-
-            <div class="row" id="results">
-                <div class="col-sm-12 heading alert alert-info">
-                    <strong class="col-xs-6">Guess</strong>
-                    <strong class="col-xs-6">Result</strong>
                 </div>
             </div>
+            <div class="alert alert-danger notincode"></div>
         </div>
 
         <div class="col-sm-6 col-sm-offset-1 instructions">
             <div class="points">
-                <h4 id="points">Points: <span>0</span> | Level<span class=level> 1</span></h4>
+                <h4 id="points">Level<span class=level> 1</span> | Points: <span>0</span> </h4>
             </div>
             <div class="panel panel-default">
                 <div class="panel-body">

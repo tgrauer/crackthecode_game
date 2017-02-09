@@ -7,10 +7,11 @@ let revealCode;
 let input = document.getElementById('user-guess');
 let points=0;
 let level = 1;
-let pointsHolder=document.getElementById('points').getElementsByTagName('span')[0];
-let levelHolder=document.getElementById('points').getElementsByTagName('span')[1];
+let pointsHolder=document.getElementById('points').getElementsByTagName('span')[1];
+let levelHolder=document.getElementById('points').getElementsByTagName('span')[0];
 let codelength=3;
 let multiplier=100;
+let notincode=[];
 
 if(answer=='' || attempt==''){
 	 setHiddenFields();
@@ -94,13 +95,20 @@ function getResults(input){
 		}else if(answer.indexOf(input.charAt(i)) > -1){
 			html += '<span class="glyphicon glyphicon-transfer"></span>';
 		}else{
+
+			if(notincode.indexOf(input.charAt(i)) === -1) {
+				notincode.push(input.charAt(i));
+			}
+			
 			html += '<span class="glyphicon glyphicon-remove"></span>';
 		}
 	}
 
 	html += '</div></div>';
 	results.innerHTML += html;
-	
+	notincode.sort();
+	document.getElementsByClassName('notincode')[0].innerHTML=notincode;
+	document.getElementsByClassName('notincode')[0].style.display='block';
 	if(correct==input.length){
 		return true;
 	}else{
@@ -134,11 +142,13 @@ function nextlevel(){
 	document.getElementById('message').classList.remove("alert");
 	document.getElementById('message').classList.remove("alert-success");
 	document.getElementById('nextlevel-div').style.display='none';
+	document.getElementsByClassName('notincode')[0].style.display='none';
 	document.getElementById('guessing-div').style.display='block';
 	level++;
 	codelength++;
 	levelHolder.innerHTML=' '+level;
 	code.innerHTML="";
+	notincode=[];
 
 	for(var i=0;i<codelength;i++){
 		code.innerHTML+='?';
@@ -156,7 +166,6 @@ function charslefttoenter(){
 	
 	var charsleft=codelength-input.value.length;
 	document.getElementsByClassName('charsleft')[0].innerHTML=charsleft+ ' more character(s)';
-	console.log(charsleft);
 
 	if(charsleft==0){
 		document.getElementsByClassName('charsleft')[0].style.display='none';

@@ -53,6 +53,7 @@ ul{
 	margin-top: 10px;
 	padding: 3px 5px;
 	text-align: center;
+	font-size: 16px;
 }
 
 .alert.alert-success{
@@ -95,6 +96,7 @@ p.num_attempts{
 .guessrow{
 	text-align: center;
 	letter-spacing: 0.2em;
+	font-size: 17px;
 }
 
 .instructions{
@@ -108,7 +110,11 @@ p.num_attempts{
 .points{
 	background: #a94442;
 	color: #fff;
-	padding: 3px 10px;
+	padding: 10px;
+}
+
+.points h4{
+	font-size: 20px;
 }
 
 .points_earned{
@@ -123,3 +129,11 @@ p.charsleft{
 	text-align: center;
 }
 
+.panel-body{
+	padding: 20px;
+}
+
+.notincode{
+	display: none;
+	font-weight: 800;
+}
