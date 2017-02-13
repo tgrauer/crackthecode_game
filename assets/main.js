@@ -183,3 +183,5 @@ function charslefttoenter(){
 		document.getElementsByClassName('charsleft')[0].style.display='block';
 	}
 }
+
+
